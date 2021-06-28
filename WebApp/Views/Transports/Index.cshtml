@@ -1,0 +1,48 @@
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.Transports.TransportIndexViewModel
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.Transport._Transports;
+}
+
+<h1>@Resources.BLL.App.DTO.Transport._Transports</h1>
+
+<h4 class="mt-5">@Resources.Views.Transports.TransportNeedsWaitingForUserAction</h4>
+@if (!Model.UserTransportNeedsWaitingForUser?.Any() ?? true)
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="_TransportsListItem" model="Model.UserTransportNeedsWaitingForUser"/>
+}
+
+<h4 class="mt-5">@Resources.Views.Transports.TransportOffersWaitingForUserAction</h4>
+@if (!Model.UserTransportOffersWaitingForUser?.Any() ?? true)
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="_TransportsListItem" model="Model.UserTransportOffersWaitingForUser"/>
+}
+
+<h4 class="mt-5">@Resources.Views.Transports.PeningSubmittedTransportNeeds</h4>
+@if (!Model.UserPendingTransportNeedTransports?.Any() ?? true)
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="_TransportsListItem" model="Model.UserPendingTransportNeedTransports"/>
+}
+
+<h4 class="mt-5">@Resources.Views.Transports.PeningSubmittedTransportOffers</h4>
+@if (!Model.UserPendingTransportOfferTransports?.Any() ?? true)
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="_TransportsListItem" model="Model.UserPendingTransportOfferTransports"/>
+}

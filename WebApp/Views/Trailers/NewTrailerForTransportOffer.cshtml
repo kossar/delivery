@@ -1,0 +1,43 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Trailers.TrailerCreateEditViewModel
+
+@{
+    ViewData["Title"] = Resources.Views.Trailers.AddTrailerToYourTransportOffer;
+}
+
+<h1>@Resources.Views.Trailers.SaveNewTrailer</h1>
+
+
+@if (Model.UserHasTrailers)
+{
+    <div class="row p-3">
+        <h4 class="text-info mr-3">@Resources.Views.Shared._Layout.Or</h4>
+        <a asp-route-transportOfferId="@Model.TransportOfferId" asp-route-transportNeedId="@Model.TransportNeedId" asp-action="TrailerFromSelectListForTransportOffer">
+            <input type="button" value="@Resources.Views.Trailers.UseExistingTrailer" class="btn btn-secondary"/>
+        </a>
+    </div>
+}
+<hr/>
+<div class="row mt-5">
+    <div class="col-md-4">
+        <form asp-action="NewTrailerForTransportOffer">
+            <input type="hidden" asp-for="TransportOfferId">
+            <input type="hidden" asp-for="TransportNeedId">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_CreateEdit" model="Model"/>
+
+            <div class="form-group">
+                <input type="submit" value="@Resources.Views.Shared._Layout.SaveContinue" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Details" asp-controller="TransportOffers" asp-route-id="@Model.TransportOfferId">@WebAppUiCommon.Cancel</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

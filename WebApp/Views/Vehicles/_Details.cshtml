@@ -1,0 +1,34 @@
+﻿@model BLL.App.DTO.Vehicle
+
+<dl class="row">
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Make)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Make)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Model)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Model)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.ReleaseDate)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </dd>
+     <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RegNr)
+        </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.RegNr)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.VehicleType)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.VehicleType!.VehicleTypeName)
+    </dd>
+</dl>

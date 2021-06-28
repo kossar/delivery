@@ -1,0 +1,55 @@
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.Parcel>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.Parcel._Parcels;
+}
+
+<h1>@Resources.BLL.App.DTO.Parcel._Parcels</h1>
+
+<p>
+    <a asp-action="Create">@WebAppUiCommon.CreateNew</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParcelInfo)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit!.UnitCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dimensions!.Dim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParcelInfo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@WebAppUiCommon.Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@WebAppUiCommon.Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

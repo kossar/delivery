@@ -1,0 +1,33 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Parcels.ParcelCreateEditCrudViewModel
+
+<div class="form-group">
+    <label asp-for="Parcel.Weight" class="control-label"></label>
+    <input asp-for="Parcel.Weight" class="form-control"/>
+    <span asp-validation-for="Parcel.Weight" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Parcel.UnitId" class="control-label"></label>
+    <select asp-for="Parcel.UnitId" class="form-control" asp-items="Model.UnitsSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+</div>
+<div class="form-group">
+    <label asp-for="Parcel.DimensionsId" class="control-label"></label>
+    <select asp-for="Parcel.DimensionsId" class="form-control" asp-items="Model.DimensionsSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Parcel.DimensionsId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Parcel.ParcelInfo" class="control-label"></label>
+    <input asp-for="Parcel.ParcelInfo" class="form-control"/>
+    <span asp-validation-for="Parcel.ParcelInfo" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Parcel.TransportNeedId" class="control-label"></label>
+    <select asp-for="Parcel.TransportNeedId" class="form-control" asp-items="Model.TransportNeedsSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Parcel.TransportNeedId" class="text-danger"></span>
+</div>

@@ -1,0 +1,55 @@
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.VehicleType>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.VehicleType._VehicleTypes;
+}
+
+<h1>@Resources.BLL.App.DTO.VehicleType._VehicleTypes</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">@WebAppUiCommon.CreateNew</a>
+    </p>
+}
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ForGoods)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleTypeName)
+            </td>
+            <td>
+                @Html.Raw(item.ForGoods ? Resources.Views.VehicleTypes._VehicleTypes.Yes : Resources.Views.VehicleTypes._VehicleTypes.No)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">@WebAppUiCommon.Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">@WebAppUiCommon.Delete</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                </td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>

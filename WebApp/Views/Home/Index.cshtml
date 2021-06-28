@@ -1,0 +1,35 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Home.HomeDisplayAddsViewModel;
+@{
+    ViewData["Title"] = @Resources.Views.Shared._Layout.AppTitle;
+}
+
+<div class="text-center">
+    <h1 class="display-4 m-5">@Resources.Views.Home._Home.WelcomeHeading</h1>
+</div>
+
+<h4 class="mt-5 mb-3">@Resources.Views.Home._Home.LatestTransportNeeds</h4>
+
+@if (!Model.TransportNeeds.Any())
+{
+    <partial name="_EmptyListItem"/>
+}
+else
+{
+    <partial name="~/Views/TransportNeeds/_TransportNeedsList.cshtml" model="Model.TransportNeeds"/>
+}
+
+
+<hr class="mt-5"/>
+
+<h4 class="mt-5 mb-3">@Resources.Views.Home._Home.LatestTransportOffers</h4>
+
+@if (!Model.TransportOffers.Any())
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="~/Views/TransportOffers/_TransportOffersList.cshtml" model="Model.TransportOffers"/> 
+}
+

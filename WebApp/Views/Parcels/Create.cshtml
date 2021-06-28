@@ -1,0 +1,30 @@
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.Parcels.ParcelCreateEditViewModel
+
+@{
+    ViewData["Title"] = WebAppUiCommon.Create;
+}
+
+<h1>@WebAppUiCommon.Create</h1>
+
+<h4>@Resources.BLL.App.DTO.Parcel._Parcel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TransportNeedId" />
+            <input type="hidden" asp-for="TransportOfferId" />
+            <partial name="_CreateEdit" model="Model"/>
+            
+            <div class="form-group">
+                <input type="submit" value="@WebAppUiCommon.Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,24 @@
+﻿@using BLL.App.DTO
+@using BLL.App.DTO.Enums
+@using Base.Resources.WebApp
+@using Extensions.Base
+@model WebApp.ViewModels.Transports.TransportCreateEditViewModel
+
+
+<div class="form-group">
+    <label asp-for="Transport.PickUpTime" class="control-label"></label>
+    <input asp-for="Transport.PickUpTime" class="form-control"/>
+    <span asp-validation-for="Transport.PickUpTime" class="text-danger"></span>
+</div>
+@if (User.GetUserId()!.Value == Model.TransportOffer!.AppUserId)
+{
+    <div class="form-group">
+        <label asp-for="Transport.EstimatedDeliveryTime" class="control-label"></label>
+        <input asp-for="Transport.EstimatedDeliveryTime" class="form-control"/>
+        <span asp-validation-for="Transport.EstimatedDeliveryTime" class="text-danger"></span>
+    </div> 
+}
+
+
+<h4>@Html.DisplayNameFor(model => Model.Transport.PickUpLocation)</h4>
+<partial name="_LocationCreateEdit" for="Transport.PickUpLocation"/>

@@ -1,0 +1,79 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.TransportOffers.TransportOfferEditVehicleViewModel
+
+@{
+    ViewData["Title"] = Resources.TransportOffers.ChangeTransportOfferVehicle;
+}
+
+<h1>@Resources.TransportOffers.ChangeTransportOfferVehicle</h1>
+
+@if (Model.HasPreviusVehicles && Model.UsePreviousVehicle)
+{
+    <h4>@Resources.TransportOffers.SelectFromSaved</h4>
+    <div class="row p-3">
+        <h4 class="text-info mr-3">@Resources.Views.Shared._Layout.Or</h4>
+        <a asp-route-id="@Model.TransportOfferId" asp-route-useprev="false" asp-action="EditVehicleForTransportOffer">
+            <input type="button" value="@Resources.Vehicles.AddNewVehicle" class="btn btn-secondary"/>
+        </a>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-md-4">
+
+
+            <form asp-action="AddVehicleIdToTransportOffer">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="TransportOfferId">
+                <div class="form-group">
+                    <label asp-for="VehicleId" class="control-label">@Resources.BLL.App.DTO.Vehicle._Vehicle</label>
+                    <select asp-for="VehicleId" class="form-control" asp-items="Model.VehicleSelectList">
+                        <option value="">-- @WebAppUiCommon.PleaseSelect --</option>
+                    </select>
+                    <span asp-validation-for="VehicleId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="@WebAppUiCommon.Save" class="btn btn-primary"/>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+}
+
+@if (!Model.UsePreviousVehicle)
+{
+    <h4>@Resources.TransportOffers.SaveVehicleForTransportOffer</h4>
+
+
+    if (Model.HasPreviusVehicles)
+    {
+        <div class="row p-3">
+            <h4 class="text-info mr-3">@Resources.Views.Shared._Layout.Or</h4>
+            <a asp-route-id="@Model.TransportOfferId" asp-route-useprev="true" asp-action="EditVehicleForTransportOffer">
+                <input type="button" value="@Resources.Vehicles.UseExistingVehicle" class="btn btn-secondary"/>
+            </a>
+        </div>
+    }
+    <hr/>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <form asp-action="EditVehicleForTransportOffer">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="TransportOfferId">
+                <partial name="_VehicleCreateEdit" for="VehicleVm"/>
+
+                <div class="form-group">
+                    <input type="submit" value="@WebAppUiCommon.Save" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+<div>
+    <a asp-action="Details" asp-route-id="@Model.TransportOfferId">@WebAppUiCommon.BackToList</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

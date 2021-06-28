@@ -1,0 +1,46 @@
+﻿@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.TransportNeed>
+
+@foreach (var item in Model)
+{
+    <div class="card p-4 mt-4 shadow-sm">
+        <div class="row">
+            <div class="col">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().TransportType) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item.TransportType)</p>
+                </div>
+            </div>
+            <div class="col">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().PersonCount) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item.PersonCount)</p>
+                </div>
+            </div>
+            <div class="col">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().TransportMeta!.StartTime) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item!.TransportMeta!.StartTime)</p>
+                </div>
+            </div>
+            <div class="col">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().TransportMeta!.StartLocation) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item!.TransportMeta!.StartLocation!.City)</p>
+                </div>
+            </div>
+            <div class="col">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().TransportMeta!.DestinationLocation) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item!.TransportMeta!.DestinationLocation!.City)</p>
+                </div>
+            </div>
+            <div class="col">
+                <h6></h6>
+                <div class="card-body">
+                    <a asp-controller="TransportNeeds" asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.View_Look</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

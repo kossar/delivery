@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Languages" xml:space="preserve">
+        <value>Keele valik</value>
+    </data>
+    <data name="NoTrailer" xml:space="preserve">
+        <value>Ilma treilerita</value>
+    </data>
+    <data name="Personal" xml:space="preserve">
+        <value>Isiklik</value>
+    </data>
+    <data name="NoOrganisation" xml:space="preserve">
+        <value>Ilma organisatsioonita</value>
+    </data>
+    <data name="AppUserOrganisations" xml:space="preserve">
+        <value>Kasutaja organisatsioonid</value>
+    </data>
+    <data name="Dimensions" xml:space="preserve">
+        <value>Dimensioonid</value>
+    </data>
+    <data name="Locations" xml:space="preserve">
+        <value>Asukohad</value>
+    </data>
+    <data name="Organisations" xml:space="preserve">
+        <value>Organisatsioonid</value>
+    </data>
+    <data name="Parcels" xml:space="preserve">
+        <value>Saadetised</value>
+    </data>
+    <data name="Trailers" xml:space="preserve">
+        <value>Treilerid</value>
+    </data>
+    <data name="TransportMetas" xml:space="preserve">
+        <value>Transpordi metainfod</value>
+    </data>
+    <data name="TransportNeeds" xml:space="preserve">
+        <value>Soovid</value>
+    </data>
+    <data name="TransportOffers" xml:space="preserve">
+        <value>Pakkumised</value>
+    </data>
+    <data name="Transports" xml:space="preserve">
+        <value>Transpordid</value>
+    </data>
+    <data name="Units" xml:space="preserve">
+        <value>Ühikud</value>
+    </data>
+    <data name="Vehicles" xml:space="preserve">
+        <value>Sõidukid</value>
+    </data>
+    <data name="VehicleTypes" xml:space="preserve">
+        <value>Sõiduki tüübid</value>
+    </data>
+    <data name="Organisational" xml:space="preserve">
+        <value>Organisatsiooniline</value>
+    </data>
+    <data name="Users" xml:space="preserve">
+        <value>Kasutajad</value>
+    </data>
+    <data name="Roles" xml:space="preserve">
+        <value>Rollid</value>
+    </data>
+    <data name="UserRole" xml:space="preserve">
+        <value>Kasutajad ja rollid</value>
+    </data>
+    <data name="Privacy" xml:space="preserve">
+        <value>Privaatsus</value>
+    </data>
+    <data name="Crud" xml:space="preserve">
+        <value>CRUD lehed</value>
+    </data>
+    <data name="LangStrings" xml:space="preserve">
+        <value>Keele sõned</value>
+    </data>
+    <data name="TransLations" xml:space="preserve">
+        <value>Tõlked</value>
+    </data>
+    <data name="Home" xml:space="preserve">
+        <value>Pealeht</value>
+    </data>
+    <data name="AppTitle" xml:space="preserve">
+        <value>De Li Ve Ry</value>
+    </data>
+    <data name="SaveContinue" xml:space="preserve">
+        <value>Salvesta ja jätka</value>
+    </data>
+    <data name="EmptyListItemNothingHere" xml:space="preserve">
+        <value>Hetkel on siin tühjus...</value>
+    </data>
+    <data name="Or" xml:space="preserve">
+        <value>VÕI</value>
+    </data>
+</root>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="SelectFromYourSavedTransportOffers" xml:space="preserve">
+        <value>Select from your saved transport offers</value>
+    </data>
+    <data name="AddNewTransportOffer" xml:space="preserve">
+        <value>Add new transport offer</value>
+    </data>
+    <data name="SubmitOffer" xml:space="preserve">
+        <value>Submit transport offer</value>
+    </data>
+    <data name="TransportNeedsWaitingForUserAction" xml:space="preserve">
+        <value>Transport needs waiting for Your action</value>
+    </data>
+    <data name="TransportOffersWaitingForUserAction" xml:space="preserve">
+        <value>Transport offers waiting for Your action</value>
+    </data>
+    <data name="PeningSubmittedTransportOffers" xml:space="preserve">
+        <value>Pending submitted transport offers</value>
+    </data>
+    <data name="PeningSubmittedTransportNeeds" xml:space="preserve">
+        <value>Pending submitted transport needs</value>
+    </data>
+    <data name="TransportNeedToMakeAnOffer" xml:space="preserve">
+        <value>Transport need to make an offer</value>
+    </data>
+    <data name="MyTransportNeedToRequestAnOffer" xml:space="preserve">
+        <value>My transport need </value>
+    </data>
+    <data name="MyTransportOffer" xml:space="preserve">
+        <value>My transport offer</value>
+    </data>
+    <data name="RequestingTransportOffer" xml:space="preserve">
+        <value>Requesting transport offer</value>
+    </data>
+    <data name="SelectFromYourSavedTransportNeeds" xml:space="preserve">
+        <value>Select from your saved transport needs</value>
+    </data>
+    <data name="AddNewTransportNeed" xml:space="preserve">
+        <value>Add new transport need</value>
+    </data>
+    <data name="CurrentTransportData" xml:space="preserve">
+        <value>Current transportData</value>
+    </data>
+    <data name="TransportNeed" xml:space="preserve">
+        <value>Transport  need </value>
+    </data>
+    <data name="TransportOffer" xml:space="preserve">
+        <value>Transport offer</value>
+    </data>
+    <data name="Reject" xml:space="preserve">
+        <value>Reject</value>
+    </data>
+    <data name="Cancel" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+    <data name="Accept" xml:space="preserve">
+        <value>Accept</value>
+    </data>
+    <data name="OnDelivery" xml:space="preserve">
+        <value>On delivery</value>
+    </data>
+    <data name="Delivered" xml:space="preserve">
+        <value>Delivered</value>
+    </data>
+</root>

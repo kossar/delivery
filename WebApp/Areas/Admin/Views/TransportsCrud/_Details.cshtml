@@ -1,0 +1,47 @@
+﻿@model BLL.App.DTO.Transport
+
+<dl class="row">
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportStatus)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.TransportStatus)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.PickUpTime)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.PickUpTime)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.EstimatedDeliveryTime)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.EstimatedDeliveryTime)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.DeliveredTime)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.DeliveredTime)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.PickUpLocation)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.PickUpLocation!.City)
+    </dd >
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportNeed)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.TransportNeed!.Id)
+    </dd >
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportOffer)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.TransportOffer!.Id)
+    </dd >
+</dl>
+

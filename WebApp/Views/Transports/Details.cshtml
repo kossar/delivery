@@ -1,0 +1,93 @@
+@using Extensions.Base
+@using Base.Resources.WebApp
+@using Domain.App.Enums
+@model BLL.App.DTO.Transport
+
+@{
+    ViewData["Title"] = Resources.Views.Transports.CurrentTransportData;
+}
+
+<h1>@Resources.Views.Transports.CurrentTransportData</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-12 col-lg-5">
+        <partial name="_Details" model="Model"/>
+        @if ((Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportNeed!.AppUserId
+              || !Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportOffer!.AppUserId)
+             && Model.TransportStatus != BLL.App.DTO.Enums.ETransportStatus.Rejected
+             && Model.TransportStatus != BLL.App.DTO.Enums.ETransportStatus.Canceled
+             && Model.TransportStatus != BLL.App.DTO.Enums.ETransportStatus.OnDelivery)
+        {
+            <a asp-route-id="@Model.Id" asp-route-status="@ETransportStatus.Rejected" asp-action="ModifyAndAdd">
+                <input type="button" value="@Resources.Views.Transports.Reject" class="btn btn-danger"/>
+            </a>
+        }
+        @if ((Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportOffer!.AppUserId
+              || !Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportNeed!.AppUserId)
+             && Model.TransportStatus != BLL.App.DTO.Enums.ETransportStatus.Rejected)
+        {
+            <a asp-route-id="@Model.Id" asp-route-status="@ETransportStatus.Canceled" asp-action="Actions">
+                <input type="button" value="@Resources.Views.Transports.Cancel" class="btn btn-danger"/>
+            </a>
+        }
+        @if (Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportNeed!.AppUserId
+             && Model.TransportStatus == BLL.App.DTO.Enums.ETransportStatus.Submitted)
+        {
+            <a asp-route-id="@Model.Id" asp-route-status="@ETransportStatus.Accepted" asp-action="Actions">
+                <input type="button" value="@Resources.Views.Transports.Accept" class="btn btn-success"/>
+            </a>
+        }
+        @if (User.GetUserId()!.Value == Model.TransportNeed!.AppUserId
+             && Model.TransportStatus == BLL.App.DTO.Enums.ETransportStatus.Accepted)
+        {
+            <a asp-route-id="@Model.Id" asp-route-status="@ETransportStatus.OnDelivery" asp-action="Actions">
+                <input type="button" value="@Resources.Views.Transports.OnDelivery" class="btn btn-success"/>
+            </a>
+        }
+        @if (User.GetUserId()!.Value == Model.TransportNeed!.AppUserId
+             && Model.TransportStatus == BLL.App.DTO.Enums.ETransportStatus.OnDelivery)
+        {
+            <a asp-route-id="@Model.Id" asp-route-status="@ETransportStatus.Delivered" asp-action="Actions">
+                <input type="button" value="@Resources.Views.Transports.Delivered" class="btn btn-success"/>
+            </a>
+        }
+
+        @if ((Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportNeed!.AppUserId
+              || !Model.UpdatedByTransportOffer && User.GetUserId()!.Value == Model.TransportOffer!.AppUserId)
+             && Model.TransportStatus != BLL.App.DTO.Enums.ETransportStatus.OnDelivery
+             || Model.TransportStatus != BLL.App.DTO.Enums.ETransportStatus.Delivered)
+        {
+            <a asp-route-id="@Model.Id" asp-action="ModifyAndAdd">
+                <input type="button" value="@WebAppUiCommon.Edit" class="btn btn-info"/>
+            </a>
+        }
+        <br/>
+        <a asp-action="Index">@WebAppUiCommon.BackToList</a>
+
+    </div>
+    <div class="col-12 col-lg-7">
+        <div class="row">
+            @if (Model.TransportNeed!.AppUserId != User.GetUserId()!.Value)
+            {
+                <h4>@Resources.Views.Transports.TransportNeed</h4>
+            }
+            else
+            {
+                <h4 class="text-info">@Resources.Views.Transports.MyTransportNeedToRequestAnOffer</h4>
+            }
+            <partial name="~/Views/TransportNeeds/_Details.cshtml" model="Model.TransportNeed"/>
+        </div>
+        <div class="row">
+            @if (Model.TransportOffer!.AppUserId != User.GetUserId()!.Value)
+            {
+                <h4>@Resources.Views.Transports.TransportOffer</h4>
+            }
+            else
+            {
+                <h4 class="text-info">@Resources.Views.Transports.MyTransportOffer</h4>
+            }
+            <partial name="~/Views/TransportOffers/_Details.cshtml" model="Model.TransportOffer"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Accepted" xml:space="preserve">
+        <value>Vastu võetud</value>
+    </data>
+    <data name="Canceled" xml:space="preserve">
+        <value>Tühistatud</value>
+    </data>
+    <data name="Delivered" xml:space="preserve">
+        <value>Kohal</value>
+    </data>
+    <data name="OnDelivery" xml:space="preserve">
+        <value>Kohale toimetamisel</value>
+    </data>
+    <data name="Rejected" xml:space="preserve">
+        <value>Tagasi lükatud</value>
+    </data>
+    <data name="Submitted" xml:space="preserve">
+        <value>Esitatud</value>
+    </data>
+</root>

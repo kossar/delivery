@@ -1,0 +1,62 @@
+@using Extensions.Base
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.TransportMeta>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.TransportMeta._TransportMetas;
+}
+
+<h1>@Resources.BLL.App.DTO.TransportMeta._TransportMetas</h1>
+
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <p>
+        <a asp-action="Create">@WebAppUiCommon.CreateNew</a>
+    </p>
+}
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartLocation!.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationLocation!.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @if ((User.Identity?.IsAuthenticated ?? false))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">@WebAppUiCommon.Edit</a>
+                    @Html.Raw("|")
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                    @Html.Raw("|")
+                    <a asp-action="Delete" asp-route-id="@item.Id">@WebAppUiCommon.Delete</a>
+                }
+                else
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

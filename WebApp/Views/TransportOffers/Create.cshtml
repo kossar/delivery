@@ -1,0 +1,46 @@
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.TransportOffers.TransportOfferCreateEditViewModel
+
+@{
+    ViewData["Title"] = WebAppUiCommon.Create;
+}
+
+<h1>@WebAppUiCommon.Create</h1>
+
+<h4>@Resources.BLL.App.DTO.TransportOffer._TransportOffer</h4>
+<hr/>
+<form asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" asp-for="VehicleId"/>
+    <input type="hidden" asp-for="TransportNeedId">
+
+    <partial name="_CreateEdit" model="Model"/>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="UseTrailer" class="control-label"></label>
+                <select asp-for="UseTrailer" class="form-control">
+                    <option value="">-- @WebAppUiCommon.PleaseSelect --</option>
+                    <option value="true">@WebAppUiCommon.Yes</option>
+                    <option value="false">@WebAppUiCommon.No</option>
+                </select>
+                <span asp-validation-for="UseTrailer" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <hr/>
+
+
+    <div class="form-group">
+        <input type="submit" value="@Resources.Views.Shared._Layout.SaveContinue" class="btn btn-primary"/>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">@WebAppUiCommon.BackToList</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,30 @@
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.VehicleTypes.VehicleTypeCreateEditViewModel
+
+@{
+    ViewData["Title"] = WebAppUiCommon.Create;
+}
+
+<h1>@WebAppUiCommon.Create</h1>
+
+<h4>@Resources.BLL.App.DTO.VehicleType._VehicleType</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <partial name="_CreateEdit" model="Model"/>
+            <div class="form-group">
+                <input type="submit" value="@WebAppUiCommon.Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@WebAppUiCommon.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

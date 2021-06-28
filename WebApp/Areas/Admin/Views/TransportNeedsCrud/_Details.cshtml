@@ -1,0 +1,28 @@
+﻿@model BLL.App.DTO.TransportNeed
+
+<dl class="row">
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportNeedInfo)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.TransportNeedInfo)
+    </dd>
+    <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TransportType)
+        </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.TransportType)
+    </dd>
+    <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.PersonCount)
+            </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PersonCount)
+        </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportMeta)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.TransportMeta!.Id)
+    </dd >
+</dl>

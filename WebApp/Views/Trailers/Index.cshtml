@@ -1,0 +1,61 @@
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.Trailer>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.Trailer._Trailers;
+}
+
+<h1>@Resources.BLL.App.DTO.Trailer._Trailers</h1>
+
+<p>
+    <a asp-action="Create">@WebAppUiCommon.CreateNew</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoadCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppUser)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoadCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit!.UnitCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dimensions!.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppUser!.FirstName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@WebAppUiCommon.Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@WebAppUiCommon.Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

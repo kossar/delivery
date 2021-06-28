@@ -1,0 +1,16 @@
+﻿@model BLL.App.DTO.Parcel
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Weight)
+    </dt>
+    <dd class="col-sm-10">
+       @Model.Weight @Model.Unit!.UnitCode
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Dimensions!.Dim)
+    </dt>
+    <dd class="col-sm-10">
+        @Model.Dimensions!.Dim @Model.Dimensions!.Unit!.UnitCode
+    </dd >
+</dl>

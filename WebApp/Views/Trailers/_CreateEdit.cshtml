@@ -1,0 +1,45 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Trailers.TrailerCreateEditViewModel
+
+<div class="form-group">
+    <label asp-for="Trailer.LoadCapacity" class="control-label"></label>
+    <input asp-for="Trailer.LoadCapacity" class="form-control"/>
+    <span asp-validation-for="Trailer.LoadCapacity" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Trailer.UnitId" class="control-label"></label>
+    <select asp-for="Trailer.UnitId" class="form-control" asp-items="Model.TrailerLoadWeightUnitSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Trailer.DimensionsId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Trailer.RegNr" class="control-label"></label>
+    <input asp-for="Trailer.RegNr" class="form-control"/>
+    <span asp-validation-for="Trailer.RegNr" class="text-danger"></span>
+</div>
+
+<hr/>
+<div class="form-group">
+    <label asp-for="Trailer.Dimensions!.Width" class="control-label"></label>
+    <input asp-for="Trailer.Dimensions!.Width" class="form-control"/>
+    <span asp-validation-for="Trailer.Dimensions!.Width" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Trailer.Dimensions!.Height" class="control-label"></label>
+    <input asp-for="Trailer.Dimensions!.Height" class="form-control"/>
+    <span asp-validation-for="Trailer.Dimensions!.Height" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Trailer.Dimensions!.Length" class="control-label"></label>
+    <input asp-for="Trailer.Dimensions!.Length" class="form-control"/>
+    <span asp-validation-for="Trailer.Dimensions!.Length" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Trailer.Dimensions!.UnitId" class="control-label"></label>
+    <select asp-for="Trailer.Dimensions!.UnitId" class="form-control" asp-items="Model.TrailerSizeSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect -- </option>
+    </select>
+    <span asp-validation-for="Trailer.Dimensions!.UnitId" class="text-danger"></span>
+</div>

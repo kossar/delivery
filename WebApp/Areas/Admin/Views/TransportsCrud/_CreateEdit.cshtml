@@ -1,0 +1,48 @@
+﻿@using BLL.App.DTO
+@using BLL.App.DTO.Enums
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.Transports.TransportCreateEditCrudViewModel
+
+<div class="form-group">
+    <label asp-for="Transport.TransportStatus" class="control-label"></label>
+    <select asp-for="Transport.TransportStatus" asp-items="Html.GetEnumSelectList<ETransportStatus>()" class="form-control">
+        <option>--- @WebAppUiCommon.PleaseSelect ---</option>
+    </select> 
+    <span asp-validation-for="Transport.TransportStatus" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Transport.PickUpTime" class="control-label"></label>
+    <input asp-for="Transport.PickUpTime" class="form-control"/>
+    <span asp-validation-for="Transport.PickUpTime" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Transport.EstimatedDeliveryTime" class="control-label"></label>
+    <input asp-for="Transport.EstimatedDeliveryTime" class="form-control"/>
+    <span asp-validation-for="Transport.EstimatedDeliveryTime" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Transport.DeliveredTime" class="control-label"></label>
+    <input asp-for="Transport.DeliveredTime" class="form-control"/>
+    <span asp-validation-for="Transport.DeliveredTime" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Transport.PickUpLocationId" class="control-label"></label>
+    <select asp-for="Transport.PickUpLocationId" class="form-control" asp-items="Model.PickUpLocationSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Transport.PickUpLocationId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Transport.TransportNeedId" class="control-label"></label>
+    <select asp-for="Transport.TransportNeedId" class="form-control" asp-items="Model.TransportNeedSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Transport.TransportNeedId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Transport.TransportOfferId" class="control-label"></label>
+    <select asp-for="Transport.TransportOfferId" class="form-control" asp-items="Model.TransportOfferSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Transport.TransportOfferId" class="text-danger"></span>
+</div>

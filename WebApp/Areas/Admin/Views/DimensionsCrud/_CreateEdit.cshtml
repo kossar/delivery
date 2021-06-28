@@ -1,0 +1,25 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Dimensions.DimensionCreateEditViewModel
+
+<div class="form-group">
+    <label asp-for="Dimensions.Width" class="control-label"></label>
+    <input asp-for="Dimensions.Width" class="form-control"/>
+    <span asp-validation-for="Dimensions.Width" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Dimensions.Height" class="control-label"></label>
+    <input asp-for="Dimensions.Height" class="form-control"/>
+    <span asp-validation-for="Dimensions.Height" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Dimensions.Length" class="control-label"></label>
+    <input asp-for="Dimensions.Length" class="form-control"/>
+    <span asp-validation-for="Dimensions.Length" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Dimensions.UnitId" class="control-label"></label>
+    <select asp-for="Dimensions.UnitId" class="form-control" asp-items="Model.UnitSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect -- </option>
+    </select>
+    <span asp-validation-for="Dimensions.UnitId" class="text-danger"></span>
+</div>

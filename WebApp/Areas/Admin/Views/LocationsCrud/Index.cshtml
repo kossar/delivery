@@ -1,0 +1,69 @@
+@using Extensions.Base
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.Location>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.Location._Locations;
+}
+
+<h1>@Resources.BLL.App.DTO.Location._Locations</h1>
+
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <p>
+        <a asp-action="Create">@WebAppUiCommon.CreateNew</a>
+    </p>
+}
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationInfo)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationInfo)
+            </td>
+            <td>
+
+                @if ((User.Identity?.IsAuthenticated ?? false) /*&& User.GetUserId()!.Value == item.AppUserId*/)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">@WebAppUiCommon.Edit</a>
+                    @Html.Raw("|")
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                    @Html.Raw("|")
+                    <a asp-action="Delete" asp-route-id="@item.Id">@WebAppUiCommon.Delete</a>
+                }
+                else
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

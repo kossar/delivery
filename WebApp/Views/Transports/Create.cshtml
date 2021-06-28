@@ -1,0 +1,68 @@
+﻿@using Base.Resources.WebApp
+@using Extensions.Base
+@model WebApp.ViewModels.Transports.TransportCreateEditViewModel
+
+@{
+    ViewData["Title"] = Resources.Views.Transports.SubmitOffer;
+}
+
+<h1>@Resources.Views.Transports.SubmitOffer</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div class="row">
+            @if (Model.TransportNeed!.AppUserId != User.GetUserId()!.Value)
+            {
+                <h4>@Resources.Views.Transports.TransportNeedToMakeAnOffer</h4>
+            }
+            else
+            {
+                <h4>@Resources.Views.Transports.MyTransportNeedToRequestAnOffer</h4>
+            }
+            <partial name="~/Views/TransportNeeds/_Details.cshtml" model="Model.TransportNeed"/>
+        </div>
+        <div class="row">
+            @if (Model.TransportOffer!.AppUserId != User.GetUserId()!.Value)
+            {
+                <h4>@Resources.Views.Transports.RequestingTransportOffer</h4>
+            }
+            else
+            {
+                <h4>@Resources.Views.Transports.MyTransportOffer</h4>
+            }
+            <partial name="~/Views/TransportOffers/_Details.cshtml" model="Model.TransportOffer"/>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TransportNeedId">
+            <input type="hidden" asp-for="TransportOfferId">
+
+            <partial name="_CreateEdit" model="Model"/>
+
+            <div class="form-group">
+                <input type="submit" value="@WebAppUiCommon.Save" class="btn btn-primary"/>
+            </div>
+        </form>
+        <div>
+            @if (Model.TransportNeed.AppUserId == User.GetUserId()!.Value)
+            {
+                <a asp-action="Details" asp-controller="TransportOffers" asp-route-id="@Model.TransportOfferId">@WebAppUiCommon.Cancel</a>
+            }
+            else
+            {
+                <a asp-action="Details" asp-controller="TransportNeeds" asp-route-id="@Model.TransportNeedId">@WebAppUiCommon.Cancel</a>
+            }
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

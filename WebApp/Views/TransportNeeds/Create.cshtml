@@ -1,0 +1,33 @@
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.TransportNeeds.TransportNeedCreateEditViewModel
+
+@{
+    ViewData["Title"] = @WebAppUiCommon.Create;
+}
+
+<h1>@WebAppUiCommon.Create</h1>
+
+<h4>@Resources.BLL.App.DTO.TransportNeed._TransportNeed</h4>
+<hr/>
+    
+    
+        <form asp-action="Create" id="create-need">
+            <div asp-validation-summary="All" class="text-danger"></div>
+           <input type="hidden" asp-for="TransportOfferId">
+            <partial name="_CreateEdit" model="Model"/>
+
+            <div class="form-group">
+                <input type="submit" value="@Resources.Views.Shared._Layout.SaveContinue" class="btn btn-primary" id="submit-need" />
+           </div>
+           @* <button type="submit" value="@Resources.Views.Shared._Layout.SaveContinue" class="btn btn-primary" id="submit-need"></button> *@
+        </form>
+
+
+
+<div>
+    <a asp-action="Index">@WebAppUiCommon.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

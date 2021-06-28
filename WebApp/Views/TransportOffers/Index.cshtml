@@ -1,0 +1,24 @@
+@using Extensions.Base
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.TransportOffer>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.TransportOffer._TransportOffers;
+}
+
+<h1> @Resources.BLL.App.DTO.TransportOffer._TransportOffers</h1>
+
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <p>
+        <a asp-action="VehicleForTransportOffer">@WebAppUiCommon.CreateNew</a>
+    </p>
+}
+@if (!Model.Any())
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="_TransportOffersList" model="Model"/>    
+}

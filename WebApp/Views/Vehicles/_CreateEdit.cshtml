@@ -1,0 +1,30 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Vehicles.VehicleCreateEditViewModel
+
+<div class="form-group">
+    <label asp-for="Vehicle.Make" class="control-label"></label>
+    <input asp-for="Vehicle.Make" class="form-control"/>
+    <span asp-validation-for="Vehicle.Make" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Vehicle.Model" class="control-label"></label>
+    <input asp-for="Vehicle.Model" class="form-control"/>
+    <span asp-validation-for="Vehicle.Model" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Vehicle.ReleaseDate" class="control-label"></label>
+    <input asp-for="Vehicle.ReleaseDate" class="form-control"/>
+    <span asp-validation-for="Vehicle.ReleaseDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Vehicle.RegNr" class="control-label"></label>
+    <input asp-for="Vehicle.RegNr" class="form-control"/>
+    <span asp-validation-for="Vehicle.RegNr" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Vehicle.VehicleTypeId" class="control-label"></label>
+    <select asp-for="Vehicle.VehicleTypeId" class="form-control" asp-items="Model.VehicleTypeSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="Vehicle.VehicleTypeId" class="text-danger"></span>
+</div>

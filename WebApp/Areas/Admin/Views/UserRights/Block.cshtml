@@ -1,0 +1,22 @@
+﻿@model Domain.App.Identity.AppUser
+
+@{
+    ViewData["Title"] = "Block";
+    Layout = "_Layout";
+}
+
+<h2>BLock</h2>
+
+<partial name="_Details" model="Model"/>
+<div class="row">
+  <div class="form-group">
+      <label asp-for="LockoutEnd" class="control-label"></label>
+      <input asp-for="LockoutEnd" class="form-control"/>
+      <span asp-validation-for="LockoutEnd" class="text-danger"></span>
+  </div>
+  <div class="form-group form-check">
+      <label class="form-check-label">
+          <input class="form-check-input" asp-for="LockoutEnabled"/> @Html.DisplayNameFor(model => model.LockoutEnabled)
+      </label>
+  </div>  
+</div>

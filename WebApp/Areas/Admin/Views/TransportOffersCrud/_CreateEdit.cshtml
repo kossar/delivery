@@ -1,0 +1,53 @@
+﻿@using BLL.App.DTO.Enums
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.TransportOffers.TransportOfferCreateEditCrudViewModel
+
+<div class="form-group">
+    <label asp-for="TransportOffer.TransportOfferInfo" class="control-label"></label>
+    <input asp-for="TransportOffer.TransportOfferInfo" class="form-control" />
+    <span asp-validation-for="TransportOffer.TransportOfferInfo" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.TransportType" class="control-label"></label>
+    <select asp-for="TransportOffer.TransportType" asp-items="Html.GetEnumSelectList<ETransportType>()" class="form-control">
+        <option>--- @WebAppUiCommon.PleaseSelect ---</option>
+    </select>
+    <span asp-validation-for="TransportOffer.TransportType" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.Price" class="control-label"></label>
+    <input asp-for="TransportOffer.Price" class="form-control" />
+    <span asp-validation-for="TransportOffer.Price" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.AvailableLoadCapacity" class="control-label"></label>
+    <input asp-for="TransportOffer.AvailableLoadCapacity" class="form-control" />
+    <span asp-validation-for="TransportOffer.AvailableLoadCapacity" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.FreeSeats" class="control-label"></label>
+    <input asp-for="TransportOffer.FreeSeats" class="form-control" />
+    <span asp-validation-for="TransportOffer.FreeSeats" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.TransportMetaId" class="control-label"></label>
+    <select asp-for="TransportOffer.TransportMetaId" class="form-control" asp-items="Model.TransportMetaSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="TransportOffer.TransportMetaId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.VehicleId" class="control-label"></label>
+    <select asp-for="TransportOffer.VehicleId" class="form-control" asp-items="Model.VehicleSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="TransportOffer.VehicleId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportOffer.TrailerId" class="control-label"></label>
+    <select asp-for="TransportOffer.TrailerId" class="form-control" asp-items="Model.TrailerSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+        <option value="">@Resources.Views.Shared._Layout.NoTrailer</option>
+    </select>
+    <span asp-validation-for="TransportOffer.TrailerId" class="text-danger"></span>
+</div>

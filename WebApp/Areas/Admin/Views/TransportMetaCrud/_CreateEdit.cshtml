@@ -1,0 +1,23 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.TransportMetas.TransportMetaCreateEditViewModel
+
+<div class="form-group">
+    <label asp-for="TransportMeta.StartLocationId" class="control-label"></label>
+    <select asp-for="TransportMeta.StartLocationId" class="form-control" asp-items="Model.StartLocationSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+
+    </select>
+    <span asp-validation-for="TransportMeta.StartLocationId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportMeta.DestinationLocationId" class="control-label"></label>
+    <select asp-for="TransportMeta.DestinationLocationId" class="form-control" asp-items="Model.DestinationLocationSelectList">
+        <option>-- @WebAppUiCommon.PleaseSelect --</option>
+    </select>
+    <span asp-validation-for="TransportMeta.DestinationLocationId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="TransportMeta.StartTime" class="control-label"></label>
+    <input asp-for="TransportMeta.StartTime" class="form-control"/>
+    <span asp-validation-for="TransportMeta.StartTime" class="text-danger"></span>
+</div>

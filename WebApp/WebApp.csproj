@@ -1,0 +1,318 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>aspnet-WebApp-2E6A58D6-3246-4A11-A0A2-4E22373812B8</UserSecretsId>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Base.Resources\Base.Resources.csproj" />
+      <ProjectReference Include="..\BLL.App\BLL.App.csproj" />
+      <ProjectReference Include="..\Contracts.BLL.App\Contracts.BLL.App.csproj" />
+      <ProjectReference Include="..\DAL.App.EF\DAL.App.EF.csproj" />
+      <ProjectReference Include="..\Extensions.Base\Extensions.Base.csproj" />
+      <ProjectReference Include="..\PublicApi.DTO.v1\PublicApi.DTO.v1.csproj" />
+      <ProjectReference Include="..\Resources\Resources.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\Admin\Pages" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Locations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Locations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Locations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Locations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Locations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Persons\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Persons\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Persons\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Persons\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Persons\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\PersonInTransportObjects\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\PersonInTransportObjects\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\PersonInTransportObjects\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\PersonInTransportObjects\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\PersonInTransportObjects\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportObjects\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\UserInTransportObjects\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\UserInTransportObjects\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\UserInTransportObjects\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\UserInTransportObjects\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\UserInTransportObjects\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\UserInTransportObjects\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Translations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Translations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Translations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Translations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Translations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\LangStrings\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\LangStrings\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\LangStrings\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\LangStrings\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\LangStrings\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\AppUserOrganisations\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Locations\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Locations\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Organisations\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Parcels\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Trailers\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportMeta\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportNeeds\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\TransportOffers\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Transports\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Units\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Vehicles\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\VehicleTypes\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Dimensions\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\AppUserOrganisations\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Locations\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Organisations\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Parcels\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Trailers\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportMeta\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportNeeds\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\TransportOffers\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Transports\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Units\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\Vehicles\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\CrudViews\VehicleTypes\_Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\_CreateEdit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\OrganisationsCrud\_Details.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\TransportObjects\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportObjects\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportObjects\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportObjects\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportObjects\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Locations\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Locations\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Locations\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Locations\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Locations\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Parcels\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Parcels\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Parcels\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Parcels\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Parcels\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Trailers\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Trailers\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Trailers\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Trailers\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Trailers\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportMeta\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportMeta\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportMeta\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportMeta\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportMeta\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportNeeds\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportNeeds\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportNeeds\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportNeeds\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportNeeds\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportOffers\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportOffers\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportOffers\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportOffers\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\TransportOffers\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Transports\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Transports\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Transports\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Transports\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Transports\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Units\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Units\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Units\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Units\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Units\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Vehicles\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Vehicles\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Vehicles\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Vehicles\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Vehicles\Index.cshtml" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="LoadCapacity" xml:space="preserve">
+        <value>Kandevõime</value>
+    </data>
+    <data name="RegNr" xml:space="preserve">
+        <value>Registri number</value>
+    </data>
+    <data name="_Trailer" xml:space="preserve">
+        <value>Treiler</value>
+    </data>
+    <data name="_Trailers" xml:space="preserve">
+        <value>Treilerid</value>
+    </data>
+</root>

@@ -1,0 +1,40 @@
+﻿@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.Transport>
+
+@foreach (var item in Model)
+{
+    <div class="card p-4 mt-4 shadow-sm">
+        <div class="row">
+            <div class="col-sm-12 col-md">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().TransportStatus) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item.TransportStatus)</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().PickUpTime) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item.PickUpTime)</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().EstimatedDeliveryTime) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item!.EstimatedDeliveryTime)</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md">
+                <h6 class="text-center"> @Html.DisplayNameFor(model => Model.First().PickUpLocation!.City) </h6>
+                <div class="card-body">
+                    <p class="card-text text-center"> @Html.DisplayFor(modelItem => item!.PickUpLocation!.City)</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md">
+                <h6 class="text-center"> </h6>
+                <div class="card-body">
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.View_Look</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

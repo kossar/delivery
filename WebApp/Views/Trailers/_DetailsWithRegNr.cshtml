@@ -1,0 +1,22 @@
+﻿@model BLL.App.DTO.Trailer
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.RegNr)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.RegNr)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.LoadCapacity)
+    </dt>
+    <dd class="col-sm-10">
+        @Model.LoadCapacity @Model.Unit!.UnitCode
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Dimensions!.Dim)
+    </dt>
+    <dd class="col-sm-10">
+        @Model.Dimensions!.Dim @Model.Dimensions.Unit!.UnitCode
+    </dd >
+</dl>

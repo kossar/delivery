@@ -1,0 +1,23 @@
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.TransportNeed>
+
+@{
+    ViewData["Title"] = Resources.BLL.App.DTO.TransportNeed._TransportNeeds;
+}
+
+<h1>@Resources.BLL.App.DTO.TransportNeed._TransportNeeds</h1>
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <p>
+        <a asp-action="Create" id="create-transport-need">@WebAppUiCommon.CreateNew</a>
+    </p>
+}
+
+@if (!Model.Any())
+{
+    await Html.RenderPartialAsync("_EmptyListItem");
+}
+else
+{
+    <partial name="_TransportNeedsList" model="Model"/>
+}

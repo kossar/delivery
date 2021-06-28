@@ -1,0 +1,23 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Trailers.TrailerWithTransportOfferIdViewModel
+
+@{
+    ViewData["Title"] = WebAppUiCommon.Remove;
+}
+
+<h1 class="text-danger">@WebAppUiCommon.Remove</h1>
+
+<h3>@Resources.Views.Trailers.RemoveTrailerFromOffer</h3>
+<div>
+    <h4>@Resources.BLL.App.DTO.Trailer._Trailer</h4>
+    <hr />
+    
+    <partial name="_DetailsWithRegNr" model="Model.Trailer"/>
+    
+    <form asp-action="RemoveTrailerFromTransportOffer">
+        <input type="hidden" asp-for="Trailer.Id" />
+        <input type="hidden" asp-for="TransportOfferId" />
+        <input type="submit" value="@WebAppUiCommon.Remove" class="btn btn-danger" /> |
+        <a asp-action="Details" asp-controller="TransportOffers" asp-route-id="@Model.TransportOfferId">@WebAppUiCommon.Cancel</a>
+    </form>
+</div>

@@ -1,0 +1,68 @@
+@using Extensions.Base
+@using Base.Resources.WebApp
+@model IEnumerable<BLL.App.DTO.Dimensions>
+
+@{
+    ViewData["Title"] = @Resources.BLL.App.DTO.Dimensions._Dimensions;
+}
+
+<h1>@Resources.BLL.App.DTO.Dimensions._Dimensions</h1>
+
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <p>
+        <a asp-action="Create">@WebAppUiCommon.CreateNew</a>
+    </p>
+}
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit!.UnitCode)
+            </td>
+            <td>
+                @if ((User.Identity?.IsAuthenticated ?? false))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">@WebAppUiCommon.Edit</a>
+                    @Html.Raw("|")
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                    @Html.Raw("|")
+                    <a asp-action="Delete" asp-route-id="@item.Id">@WebAppUiCommon.Delete</a>
+                }
+                else
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id">@WebAppUiCommon.Details</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

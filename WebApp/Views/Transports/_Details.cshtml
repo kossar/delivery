@@ -1,0 +1,31 @@
+﻿@model BLL.App.DTO.Transport
+
+<dl class="row">
+    <dt class = "col-12">
+        @Html.DisplayNameFor(model => model.TransportStatus)
+    </dt>
+    <dd class = "col-12">
+        @Html.DisplayFor(model => model.TransportStatus)
+    </dd>
+    <dt class = "col-12">
+        @Html.DisplayNameFor(model => model.PickUpTime)
+    </dt>
+    <dd class = "col-12">
+        @Html.DisplayFor(model => model.PickUpTime)
+    </dd>
+    <dt class = "col-12">
+        @Html.DisplayNameFor(model => model.EstimatedDeliveryTime)
+    </dt>
+    <dd class = "col-12">
+        @Html.DisplayFor(model => model.EstimatedDeliveryTime)
+    </dd>
+    <dt class = "col-12">
+        @Html.DisplayNameFor(model => model.DeliveredTime)
+    </dt>
+    <dd class = "col-12">
+        @Html.DisplayFor(model => model.DeliveredTime)
+    </dd>
+</dl>
+<h5> @Html.DisplayNameFor(model => model.PickUpLocation)</h5>
+<partial name="_LocationDetails" model="Model.PickUpLocation"/>
+

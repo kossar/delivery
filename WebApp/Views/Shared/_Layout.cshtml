@@ -1,0 +1,104 @@
+﻿@using Extensions.Base
+@using System.Globalization
+@using System.Threading
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - @Resources.Views.Shared._Layout.AppTitle</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@Resources.Views.Shared._Layout.AppTitle</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="TransportNeeds" asp-action="Index" id="transport-need-link">@Resources.Views.Shared._Layout.TransportNeeds</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="TransportOffers" asp-action="Index">@Resources.Views.Shared._Layout.TransportOffers</a>
+                    </li>
+                    @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Transports" asp-action="Index">@Resources.Views.Shared._Layout.Transports</a>
+                        </li>
+                    }
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @Resources.Views.Shared._Layout.Users
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="Index">@Resources.Views.Shared._Layout.Users</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Roles" asp-action="Index">@Resources.Views.Shared._Layout.Roles</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="UserRights" asp-action="Index">@Resources.Views.Shared._Layout.UserRole</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ADMIN
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Units" asp-action="Index">@Resources.Views.Shared._Layout.Units</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="VehicleTypes" asp-action="Index">@Resources.Views.Shared._Layout.VehicleTypes</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">@Resources.Views.Shared._Layout.Crud</h6>
+                                <div class="dropdown-divider"></div>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="TransportNeedsCrud" asp-action="Index">@Resources.Views.Shared._Layout.TransportNeeds</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="ParcelsCrud" asp-action="Index">@Resources.Views.Shared._Layout.Parcels</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="TransportOffersCrud" asp-action="Index">@Resources.Views.Shared._Layout.TransportOffers</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="VehiclesCrud" asp-action="Index">@Resources.Views.Shared._Layout.Vehicles</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="TrailersCrud" asp-action="Index">@Resources.Views.Shared._Layout.Trailers</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="VehicleTypesCrud" asp-action="Index">@Resources.Views.Shared._Layout.VehicleTypes</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="TransportMetaCrud" asp-action="Index">@Resources.Views.Shared._Layout.TransportMetas</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="LocationsCrud" asp-action="Index">@Resources.Views.Shared._Layout.Locations</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="UnitsCrud" asp-action="Index">@Resources.Views.Shared._Layout.Units</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="DimensionsCrud" asp-action="Index">@Resources.Views.Shared._Layout.Dimensions</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="TransportsCrud" asp-action="Index">@Resources.Views.Shared._Layout.Transports</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="LangStrings" asp-action="Index">@Resources.Views.Shared._Layout.LangStrings</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Translations" asp-action="Index">@Resources.Views.Shared._Layout.TransLations</a>
+                            </div>
+                        </li>
+                    }
+
+                    <partial name="_LanguageSelection"/>
+
+                </ul>
+                <partial name="_LoginPartial"/>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; @DateTime.Today.Year @*- @Resources.Views.Shared._Layout.AppTitle - <a asp-area="" asp-controller="Home" asp-action="Privacy">@Resources.Views.Shared._Layout.Privacy</a>*@
+        @* | *@
+        @* Culture: @Thread.CurrentThread.CurrentCulture.Name (@CultureInfo.CurrentCulture.Name) | UiCulture: @Thread.CurrentThread.CurrentUICulture.Name (@CultureInfo.CurrentUICulture.Name) *@
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

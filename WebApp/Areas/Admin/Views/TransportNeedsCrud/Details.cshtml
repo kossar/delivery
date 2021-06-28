@@ -1,0 +1,26 @@
+@using Extensions.Base
+@using Base.Resources.WebApp
+@model BLL.App.DTO.TransportNeed
+
+@{
+    ViewData["Title"] = @WebAppUiCommon.Details;
+}
+
+<h1>@WebAppUiCommon.Details</h1>
+
+<div>
+    <h4>@Resources.BLL.App.DTO.TransportNeed._TransportNeed</h4>
+    <hr/>
+
+    <partial name="_Details" model="Model"/>
+
+</div>
+<div>
+    @if ((User.Identity?.IsAuthenticated ?? false) && User.GetUserId()!.Value == Model.AppUserId)
+    {
+        <a asp-action="Edit" asp-route-id="@Model.Id">@WebAppUiCommon.Edit</a>
+        @Html.Raw("|")
+    }
+
+    <a asp-action="Index">@WebAppUiCommon.BackToList</a>
+</div>

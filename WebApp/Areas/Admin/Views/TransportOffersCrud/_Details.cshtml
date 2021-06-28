@@ -1,0 +1,52 @@
+﻿@model BLL.App.DTO.TransportOffer
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportOfferInfo)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.TransportOfferInfo)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportType)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.TransportType)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Price)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Price)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.AvailableLoadCapacity)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.AvailableLoadCapacity)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FreeSeats)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.FreeSeats)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.TransportMeta)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.TransportMeta!.Id)
+    </dd >
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Vehicle)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Vehicle!.Make)
+    </dd >
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Trailer)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Trailer!.RegNr)
+    </dd >
+</dl>

@@ -1,0 +1,40 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Transports.TransportCreateEditFromOfferViewModel
+
+<h1>@Resources.Views.Transports.SelectFromYourSavedTransportNeeds</h1>
+
+<div class="row p-3">
+    <h4 class="text-info mr-3">@Resources.Views.Shared._Layout.Or</h4>
+    <a asp-action="Create" asp-controller="TransportNeeds" asp-route-transportOfferId="@Model.TransportOfferId">
+        <input type="button" value="@Resources.Views.Transports.AddNewTransportNeed" class="btn btn-secondary"/>
+    </a>
+</div>
+
+<hr/>
+<form method="GET" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="TransportOfferId">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="TransportNeedId" class="control-label"></label>
+                <select asp-for="TransportNeedId" class="form-control" asp-items="Model.TransportNeedSelectList">
+                    <option value="">-- @WebAppUiCommon.PleaseSelect --</option>
+                </select>
+                <span asp-validation-for="TransportNeedId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="@WebAppUiCommon.Save" class="btn btn-primary"/>
+    </div>
+</form>
+<div>
+    <a asp-action="Details" asp-controller="TransportOffers" asp-route-id="@Model.TransportOfferId">@WebAppUiCommon.Cancel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

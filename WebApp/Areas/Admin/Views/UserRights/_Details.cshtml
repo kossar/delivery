@@ -1,0 +1,35 @@
+﻿@model Domain.App.Identity.AppUser
+
+<dl class="row">
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.UserName)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.UserName)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.EmailConfirmed)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.EmailConfirmed)
+    </dd>
+
+</dl>

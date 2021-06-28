@@ -1,0 +1,22 @@
+﻿@model WebApp.ViewModels.Locations.LocationCreateEditViewModel
+
+<div class="form-group">
+    <label asp-for="Location.Country" class="control-label"></label>
+    <input asp-for="Location.Country" class="form-control"/>
+    <span asp-validation-for="Location.Country" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Location.City" class="control-label"></label>
+    <input asp-for="Location.City" class="form-control"/>
+    <span asp-validation-for="Location.City" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Location.Address" class="control-label"></label>
+    <input asp-for="Location.Address" class="form-control"/>
+    <span asp-validation-for="Location.Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Location.LocationInfo" class="control-label"></label>
+    <input asp-for="Location.LocationInfo" class="form-control"/>
+    <span asp-validation-for="Location.LocationInfo" class="text-danger"></span>
+</div>

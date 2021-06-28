@@ -1,0 +1,40 @@
+﻿@using Base.Resources.WebApp
+@model WebApp.ViewModels.Trailers.TrailerFromSelectListViewModel
+
+<h1>@Resources.Views.Trailers.SelectTrailerFromSaved</h1>
+<div class="row p-3">
+    <h4 class="text-info mr-3">@Resources.Views.Shared._Layout.Or</h4>
+    <a asp-route-transportOfferId="@Model.TransportOfferId" asp-route-transportNeedId="@Model.TransportNeedId" asp-action="NewTrailerForTransportOffer">
+        <input type="button" value="@Resources.Views.Trailers.SaveNewTrailer" class="btn btn-secondary"/>
+    </a>
+</div>
+<hr/>
+<div class="row mt-5">
+    <div class="col-12 col-md-4">
+
+        <form asp-action="TrailerFromSelectListForTransportOffer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TransportOfferId">
+            <input type="hidden" asp-for="TransportNeedId">
+            <div class="form-group">
+                <label asp-for="TrailerId" class="control-label"></label>
+                <select asp-for="TrailerId" class="form-control" asp-items="Model.TrailerSelectList">
+                    <option value="">-- @WebAppUiCommon.PleaseSelect --</option>
+                </select>
+                <span asp-validation-for="TrailerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Resources.Views.Shared._Layout.SaveContinue" class="btn btn-primary"/>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details" asp-controller="TransportOffers" asp-route-id="@Model.TransportOfferId">@WebAppUiCommon.Cancel</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

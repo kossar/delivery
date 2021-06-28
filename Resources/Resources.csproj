@@ -1,0 +1,246 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Views\Shared\_Layout.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Shared\_Layout.et.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Layout.et.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Dimensions.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Dimensions.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Location.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Location.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Organisation.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Organisation.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Parcel.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Parcel.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Trailer.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Trailer.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Transport.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Transport.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\TransportMeta.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>TransportMeta.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\TransportNeed.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>TransportNeed.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\TransportOffer.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>TransportOffer.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Unit.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Unit.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Vehicle.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Vehicle.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\VehicleType.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>VehicleType.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Enums\ETransportStatus.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>ETransportStatus.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\Enums\ETransortType.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>ETransortType.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL.App.DTO\AppUserOrganisations.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppUserOrganisations.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Login\_Login.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Login.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Home\_Home.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>_Home.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\VehicleTypes\_VehicleTypes.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>_VehicleTypes.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\TransportNeeds\TransportNeeds.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>TransportNeeds.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Parcels.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Parcels.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Vehicles.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Vehicles.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\TransportOffers.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>TransportOffers.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="ViewModels\TransportOfferCreateEditViewModel.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>TransportOfferCreateEditViewModel.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Trailers.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Trailers.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Views\Transports.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Transports.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Shared\_Layout.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Layout.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Dimensions.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Dimensions.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Location.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Location.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Organisation.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Organisation.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Parcel.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Parcel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Trailer.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Trailer.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Transport.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Transport.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\TransportMeta.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TransportMeta.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\TransportNeed.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TransportNeed.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\TransportOffer.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TransportOffer.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Unit.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Unit.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Vehicle.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Vehicle.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\VehicleType.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>VehicleType.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Enums\ETransportStatus.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ETransportStatus.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL.App.DTO\Enums\ETransortType.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ETransortType.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\Login\_Login.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Login.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\Home\_Home.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_Home.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\VehicleTypes\_VehicleTypes.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_VehicleTypes.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\TransportNeeds\TransportNeeds.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TransportNeeds.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\Parcels.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Parcels.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\Vehicles.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Vehicles.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\TransportOffers.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TransportOffers.resx</DependentUpon>
+      </Compile>
+      <Compile Update="ViewModels\TransportOfferCreateEditViewModel.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>TransportOfferCreateEditViewModel.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\Trailers.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Trailers.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Views\Transports.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Transports.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>

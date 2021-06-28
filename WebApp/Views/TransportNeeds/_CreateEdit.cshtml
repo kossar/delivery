@@ -1,0 +1,46 @@
+﻿@using BLL.App.DTO.Enums
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.TransportNeeds.TransportNeedCreateEditViewModel
+
+@functions
+{
+
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="TransportNeed.TransportNeedInfo" class="control-label"></label>
+            <textarea asp-for="TransportNeed.TransportNeedInfo" class="form-control"></textarea>
+            <span asp-validation-for="TransportNeed.TransportNeedInfo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransportNeed.TransportType" class="control-label"></label>
+            <select asp-for="TransportNeed.TransportType" asp-items="Html.GetEnumSelectList<ETransportType>()" class="form-control">
+                <option>--- @WebAppUiCommon.PleaseSelect ---</option>
+            </select>
+            <span asp-validation-for="TransportNeed.TransportType" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransportNeed.PersonCount" class="control-label"></label>
+            <input asp-for="TransportNeed.PersonCount" class="form-control"/>
+            <span asp-validation-for="TransportNeed.PersonCount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransportMeta.StartTime" class="control-label"></label>
+            <input asp-for="TransportMeta.StartTime" class="form-control"/>
+            <span asp-validation-for="TransportMeta!.StartTime" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <h4>@Html.DisplayNameFor(model => Model.TransportMeta.StartLocation)</h4>
+        <partial name="_LocationCreateEdit" for="StartLocation" />
+    </div>
+    <div class="col-12 col-md-4">
+        <h4>@Html.DisplayNameFor(model => Model.TransportMeta.DestinationLocation)</h4>
+        <partial name="_LocationCreateEdit" for="DestinationLocation" />
+    </div>
+</div>

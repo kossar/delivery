@@ -1,0 +1,36 @@
+@using Base.Resources.WebApp
+@model WebApp.ViewModels.Locations.LocationCreateEditViewModel
+
+@{
+    ViewData["Title"] = WebAppUiCommon.Edit;
+}
+
+<h1>@WebAppUiCommon.Edit</h1>
+
+<h4>@Resources.BLL.App.DTO.Location._Location</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Location.Id" />
+            @* <input type="hidden" asp-for="Location.CountryId" /> *@
+            @* <input type="hidden" asp-for="Location.CityId" /> *@
+            @* <input type="hidden" asp-for="Location.AddressId" /> *@
+            @*  <input type="hidden" asp-for="Location.LocationInfoId" /> *@
+            
+            <partial name="_CreateEdit" model="Model"/>
+            <div class="form-group">
+                <input type="submit" value="@WebAppUiCommon.Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
